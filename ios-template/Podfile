@@ -9,10 +9,13 @@ target 'ios-template' do
 
   # Network
   pod 'Alamofire', '~> 5.4'
+  pod 'ReachabilitySwift'
 
   # Layout
   pod 'SnapKit', '~> 5.0.0'
 
   # Utilities
   pod 'IQKeyboardManagerSwift', '6.3.0'
+  pod 'MBProgressHUD', '~> 1.2.0'
+  
 end
