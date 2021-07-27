@@ -16,4 +16,10 @@ final class Service {
                         dataType: DriverList.self,
                         completion: completion)
     }
+
+    func getDriverDetail(withId id: Int, completion: @escaping (Result<DriverDetail, NetworkError>) -> Void) {
+        session.request(endpoint: Endpoint.driverDetail(id: id),
+                        dataType: DriverDetail.self,
+                        completion: completion)
+    }
 }

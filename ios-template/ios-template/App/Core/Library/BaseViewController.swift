@@ -7,7 +7,7 @@
 
 import UIKit
 
-class BaseViewController<T: BaseView>: LayoutableViewController, AlertPresentable {
+class BaseViewController<T: BaseView>: LayoutableViewController, AlertPresentable, ProgressHUDPresentable {
     // MARK: - Properties
     typealias ViewType = T
 

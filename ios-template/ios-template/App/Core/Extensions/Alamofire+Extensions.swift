@@ -26,7 +26,7 @@ extension NetworkError: LocalizedError {
     }
 }
 
-extension Session: ProgressHUDPresentable {
+extension Session {
 
     func request<T: EndpointType, E: Decodable>(endpoint: T, dataType: E.Type, completion: @escaping (Result<E, NetworkError>) -> Void) {
 
@@ -43,14 +43,12 @@ extension Session: ProgressHUDPresentable {
             break
         }
 
-        showProgressHUD()
         request(endpointURL,
                 method: endpoint.method,
                 parameters: endpoint.parameters,
                 encoding: endpoint.encoding,
                 headers: endpoint.headers
         ).responseDecodable(of: E.self) { (response) in
-            self.hideProgressHUD()
             if let error = response.error {
                 completion(.failure(.internalError(error)))
             } else if let value = response.value {

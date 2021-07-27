@@ -20,6 +20,7 @@ extension ProgressHUDPresentable {
     private var activityIndicatorView: UIActivityIndicatorView {
         let activityIndicatorView = UIActivityIndicatorView()
         activityIndicatorView.hidesWhenStopped = true
+        activityIndicatorView.tag = progressHudTag
         return activityIndicatorView
     }
 
@@ -39,6 +40,7 @@ extension ProgressHUDPresentable {
         if let window = UIApplication.shared.keyWindow {
             for view in window.subviews where view.tag == progressHudTag {
                 view.removeFromSuperview()
+                activityIndicatorView.stopAnimating()
                 break
             }
         }

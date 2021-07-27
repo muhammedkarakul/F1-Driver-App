@@ -23,6 +23,12 @@
 		572343FF26B0A56B00B401BC /* DriverList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572343FE26B0A56B00B401BC /* DriverList.swift */; };
 		5723440126B0A5B000B401BC /* Driver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5723440026B0A5B000B401BC /* Driver.swift */; };
 		5723440326B0A99100B401BC /* AlertPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5723440226B0A99100B401BC /* AlertPresentable.swift */; };
+		5723440526B0B1B600B401BC /* DriverTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5723440426B0B1B600B401BC /* DriverTableViewCell.swift */; };
+		5723440726B0B22C00B401BC /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5723440626B0B22C00B401BC /* BaseTableViewCell.swift */; };
+		5723440B26B0B92500B401BC /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5723440A26B0B92500B401BC /* DetailViewController.swift */; };
+		5723440E26B0B94C00B401BC /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5723440D26B0B94C00B401BC /* DetailView.swift */; };
+		5723441126B0BB7300B401BC /* DriverDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5723441026B0BB7300B401BC /* DriverDetail.swift */; };
+		5723441426B0BBB100B401BC /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5723441326B0BBB100B401BC /* DetailViewModel.swift */; };
 		57EA493826B08349005907C3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57EA493726B08349005907C3 /* AppDelegate.swift */; };
 		57EA493C26B08349005907C3 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57EA493B26B08349005907C3 /* MainViewController.swift */; };
 		57EA494126B0834C005907C3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57EA494026B0834C005907C3 /* Assets.xcassets */; };
@@ -50,6 +56,12 @@
 		572343FE26B0A56B00B401BC /* DriverList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverList.swift; sourceTree = "<group>"; };
 		5723440026B0A5B000B401BC /* Driver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Driver.swift; sourceTree = "<group>"; };
 		5723440226B0A99100B401BC /* AlertPresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertPresentable.swift; sourceTree = "<group>"; };
+		5723440426B0B1B600B401BC /* DriverTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverTableViewCell.swift; sourceTree = "<group>"; };
+		5723440626B0B22C00B401BC /* BaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
+		5723440A26B0B92500B401BC /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		5723440D26B0B94C00B401BC /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		5723441026B0BB7300B401BC /* DriverDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverDetail.swift; sourceTree = "<group>"; };
+		5723441326B0BBB100B401BC /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
 		57EA493426B08349005907C3 /* ios-template.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ios-template.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		57EA493726B08349005907C3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		57EA493B26B08349005907C3 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -94,6 +106,7 @@
 			children = (
 				572343DE26B097E000B401BC /* BaseViewController.swift */,
 				572343E026B097EE00B401BC /* BaseView.swift */,
+				5723440626B0B22C00B401BC /* BaseTableViewCell.swift */,
 			);
 			path = Library;
 			sourceTree = "<group>";
@@ -114,6 +127,7 @@
 			isa = PBXGroup;
 			children = (
 				572343E826B09A1700B401BC /* MainView.swift */,
+				5723440426B0B1B600B401BC /* DriverTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -152,6 +166,49 @@
 				5723440026B0A5B000B401BC /* Driver.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		5723440826B0B91000B401BC /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				5723441226B0BBA200B401BC /* ViewModel */,
+				5723440F26B0BB6A00B401BC /* Model */,
+				5723440C26B0B94000B401BC /* View */,
+				5723440926B0B91600B401BC /* Controller */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
+		5723440926B0B91600B401BC /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				5723440A26B0B92500B401BC /* DetailViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		5723440C26B0B94000B401BC /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5723440D26B0B94C00B401BC /* DetailView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		5723440F26B0BB6A00B401BC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5723441026B0BB7300B401BC /* DriverDetail.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		5723441226B0BBA200B401BC /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				5723441326B0BBB100B401BC /* DetailViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		57EA492B26B08349005907C3 = {
@@ -205,6 +262,7 @@
 		57EA494D26B084B5005907C3 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				5723440826B0B91000B401BC /* Detail */,
 				57EA494E26B084C5005907C3 /* Main */,
 			);
 			path = Screens;
@@ -382,18 +440,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5723440526B0B1B600B401BC /* DriverTableViewCell.swift in Sources */,
 				572343F726B0A13A00B401BC /* EndPoint.swift in Sources */,
 				572343E626B0993E00B401BC /* LayoutableView.swift in Sources */,
 				572343EE26B09CCE00B401BC /* ViewModel.swift in Sources */,
 				572343E926B09A1700B401BC /* MainView.swift in Sources */,
+				5723440E26B0B94C00B401BC /* DetailView.swift in Sources */,
 				57EA493C26B08349005907C3 /* MainViewController.swift in Sources */,
+				5723441426B0BBB100B401BC /* DetailViewModel.swift in Sources */,
+				5723440B26B0B92500B401BC /* DetailViewController.swift in Sources */,
 				572343E426B098FD00B401BC /* LayoutableViewController.swift in Sources */,
 				57EA493826B08349005907C3 /* AppDelegate.swift in Sources */,
+				5723440726B0B22C00B401BC /* BaseTableViewCell.swift in Sources */,
 				572343DF26B097E000B401BC /* BaseViewController.swift in Sources */,
 				572343FC26B0A24600B401BC /* ProgressHUDPresentable.swift in Sources */,
 				572343FA26B0A17E00B401BC /* Alamofire+Extensions.swift in Sources */,
 				5723440326B0A99100B401BC /* AlertPresentable.swift in Sources */,
 				5723440126B0A5B000B401BC /* Driver.swift in Sources */,
+				5723441126B0BB7300B401BC /* DriverDetail.swift in Sources */,
 				572343FF26B0A56B00B401BC /* DriverList.swift in Sources */,
 				572343F526B0A0BE00B401BC /* Logger.swift in Sources */,
 				572343F126B09FBA00B401BC /* Service.swift in Sources */,

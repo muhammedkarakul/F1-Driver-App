@@ -9,6 +9,7 @@ import Alamofire
 
 enum Endpoint: EndpointType {
     case driverList
+    case driverDetail(id: Int)
 
     var method: HTTPMethod {
         .get
@@ -16,7 +17,7 @@ enum Endpoint: EndpointType {
 
     var parameters: Parameters? {
         switch self {
-        case .driverList:
+        case .driverList, .driverDetail:
             return nil
         }
     }
@@ -25,6 +26,8 @@ enum Endpoint: EndpointType {
         switch self {
         case .driverList:
             return "drivers"
+        case .driverDetail(let id):
+            return "driverDetail/\(id)"
         }
     }
 }

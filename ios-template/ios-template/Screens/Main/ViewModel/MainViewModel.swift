@@ -7,11 +7,9 @@
 
 import UIKit
 
-typealias Response = DriverList
-
 protocol MainViewModelDelegate: AnyObject {
     func didErrorOccurred(_ error: NetworkError)
-    func didResponseReceived(_ response: Response)
+    func didResponseReceived(_ response: DriverList)
 }
 
 final class MainViewModel: ViewModel {
@@ -20,16 +18,23 @@ final class MainViewModel: ViewModel {
 
     private var service = Service()
 
-    private var response: Response?
+    private var response: DriverList? {
+        didSet {
+            orderedDrivers = response?.items.sorted(by: { $0.point > $1.point })
+        }
+    }
+
+    private var orderedDrivers: [Driver]?
 
     var numberOfRowsInSection: Int {
-        response?.items.count ?? .zero
+        orderedDrivers?.count ?? .zero
     }
 
     // MARK: - Methods
-    func configureTableViewCell(_ cell: UITableViewCell, forIndexPath indexPath: IndexPath) {
-        guard let driver = response?.items[indexPath.row] else { return }
-        cell.textLabel?.text = "\(driver.name)"
+    func configureDriverTableViewCell(_ cell: DriverTableViewCell, forIndexPath indexPath: IndexPath) {
+        guard let driver = orderedDrivers?[indexPath.row] else { return }
+        cell.title = driver.name
+        cell.point = driver.point
     }
 
     func getDriverList() {
@@ -42,5 +47,9 @@ final class MainViewModel: ViewModel {
                 self.delegate?.didResponseReceived(response)
             }
         }
+    }
+
+    func getDriverId(forIndexPath indexPath: IndexPath) -> Int? {
+        orderedDrivers?[indexPath.row].id
     }
 }

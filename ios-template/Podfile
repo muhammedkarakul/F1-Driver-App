@@ -10,6 +10,7 @@ target 'ios-template' do
   # Network
   pod 'Alamofire', '~> 5.4'
   pod 'ReachabilitySwift'
+  pod 'Kingfisher'
 
   # Layout
   pod 'SnapKit', '~> 5.0.0'

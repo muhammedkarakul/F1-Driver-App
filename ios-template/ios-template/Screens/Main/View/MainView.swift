@@ -18,7 +18,7 @@ final class MainView: BaseView {
     // MARK: - Setup
     override func linkInteractor() {
         super.linkInteractor()
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        tableView.register(DriverTableViewCell.self, forCellReuseIdentifier: "cell")
     }
 
     override func configureAppearance() {
