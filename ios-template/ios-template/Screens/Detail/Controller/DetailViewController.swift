@@ -22,6 +22,11 @@ final class DetailViewController: BaseViewController<DetailView> {
     }
 
     // MARK: - Setup
+    override func configureAppearance() {
+        super.configureAppearance()
+        title = "Detay"
+    }
+
     override func linkInteractor() {
         super.linkInteractor()
         viewModel.delegate = self

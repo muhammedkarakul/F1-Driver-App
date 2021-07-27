@@ -27,7 +27,7 @@ class MainViewController: BaseViewController<MainView> {
 
     override func configureAppearance() {
         super.configureAppearance()
-        title = "F1 Driver List"
+        title = "F1 Pilotları"
     }
 }
 
